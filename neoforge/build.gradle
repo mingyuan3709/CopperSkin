@@ -1,0 +1,29 @@
+architectury {
+    platformSetupLoomIde()
+    neoForge()
+}
+
+loom {
+    runs {
+        data {
+            clientData()
+            setRunDirectory file('run/data')
+            programArguments.addAll(
+                    '--all', '--mod', "${project.mod_id}",
+                    '--output', file('../src/generated/resources').absolutePath,
+                    '--existing', file('../src/main/resources').absolutePath
+            )
+        }
+    }
+
+    neoForge {
+        convertAccessWideners(tasks.named('shadowJar'), 'example.accesswidener')
+    }
+}
+
+dependencies {
+    neoForge "net.neoforged:neoforge:${rootProject.neoforge_version}"
+
+    common(project(':')) { transitive false }
+    shadowBundle project(path: ':', configuration: 'transformProductionNeoForge')
+}
