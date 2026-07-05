@@ -28,7 +28,4 @@ ordering = "NONE"
 side = "BOTH"
 
 [[mixins]]
-config = "example.mixins.json"
-
-[[mixins]]
-config = "example-neoforge.mixins.json"
+config = "copperskin.mixins.json"

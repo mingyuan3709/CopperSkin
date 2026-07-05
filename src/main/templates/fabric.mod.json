@@ -18,16 +18,12 @@
   "license": "${mod_license}",
   "environment": "*",
   "entrypoints": {
-    "main": [
-      "com.example.fabric.ExampleModFabric"
-    ],
     "client": [
-      "com.example.fabric.client.ExampleModFabricClient"
+      "ink.mingyuan.copperskin.fabric.CopperSkinFabric"
     ]
   },
   "mixins": [
-    "example.mixins.json",
-    "example-fabric.mixins.json"
+    "copperskin.mixins.json"
   ],
   "depends": {
     "minecraft": "${fabric_minecraft_version_range}",
